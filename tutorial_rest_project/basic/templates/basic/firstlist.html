@@ -1,0 +1,20 @@
+
+<h1>First Articles</h1>
+<small>Today: {{ now | date }}</small>
+
+<form action="{% url 'firstlist' %}" method = "GET">
+    <table>
+    {{ filter_form.as_table }}
+    </table>
+    <button type="submit">Submit</button>
+</form>
+
+<ul>
+    {% for article in object_list %}
+    <li>{{ article.id }} -- {{ article.name }} ({{ article.date_created }}) </li>
+        {% empty %}
+            <li>No articles yet.</li>
+            {% endfor %}
+</ul>
+
+
