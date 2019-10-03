@@ -8,5 +8,6 @@ router.register('second', views.SecondView)
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('api/', include(router.urls), name = 'api')
+    path('api/', include(router.urls), name = 'api'),
+    path('firstlist/', views.FirstListView.as_view(), name = 'firstlist'),
 ]
